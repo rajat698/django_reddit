@@ -54,6 +54,12 @@ class Comment(MttpContentTypeAware):
 
     class MPTTMeta:
         order_insertion_by = ['-score']
+    
+    #Funtion to add edit comments functionality
+    def edit(comment, new):
+         comment.raw_comment = new
+         comment.html_comment = mistune.markdown(new)
+         comment.save()
 
     @classmethod
     def create(cls, author, raw_comment, parent):
