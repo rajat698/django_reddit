@@ -8,13 +8,23 @@ from django.shortcuts import render, redirect, get_object_or_404
 from reddit.forms import UserForm, ProfileForm
 from reddit.utils.helpers import post_only
 from users.models import RedditUser
+from reddit.models import Submission, Comment
 
 
 def user_profile(request, username):
     user = get_object_or_404(User, username=username)
     profile = RedditUser.objects.get(user=user)
 
-    return render(request, 'public/profile.html', {'profile': profile})
+    user_submissions = Submission.objects.filter(author=user.id).order_by('-score').all()
+    user_comments = Comment.objects.filter(author=user.id).all()
+    for comment in user_comments:
+        print(comment.raw_comment)
+
+    return render(request, 'public/profile.html', {
+        'profile': profile,
+        'user_submissions': user_submissions,
+        'user_comments': user_comments
+     })
 
 
 @login_required
