@@ -164,3 +164,8 @@ fabric.properties
 # Development sqlite database
 
 dev.db
+
+#Env
+
+venv*
+ *migrations*
