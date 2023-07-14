@@ -1,3 +1,5 @@
+Rajat's Colab link - https://colab.research.google.com/drive/1tewL3EnNsttzHepHTJ0ozeWElMXwaPb0?usp=sharing&pli=1&authuser=1#scrollTo=yeQ6IQjQSEmb
+
 #Django reddit
 Reddit clone written in python using django web framework and twitter's bootstrap.
 
