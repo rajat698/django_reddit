@@ -41,7 +41,8 @@ First make sure to create and activate a virtualenv, then open a terminal at the
 For the time being there is no separate production specific settings because the project is not yet production ready.
 
 #Dependencies
-$ pip install django-environ django-widget-tweaks django-mptt django-debug-toolbar mistune
+
+```$ pip install django-environ django-widget-tweaks django-mptt django-debug-toolbar mistune```
 
 #Deployment
 
