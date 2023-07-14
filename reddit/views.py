@@ -140,7 +140,7 @@ def post_comment(request, comment_id=None):
             return JsonResponse({'msg': "Add an edition!"})
 
         orig_comment.edit(edit_raw_comment)
-        return JsonResponse({'msg': "Comment edited"})
+        return JsonResponse({'msg': "Comment added"})
     if parent_id:
         if not all([parent_id, parent_type]) or \
                 parent_type not in ['comment', 'submission'] or \
