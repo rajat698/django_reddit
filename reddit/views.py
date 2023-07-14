@@ -165,7 +165,7 @@ def post_comment(request, comment_id=None):
                                 parent=parent_object)
 
         comment.save()
-        return JsonResponse({'msg': "Comments edited."})
+        return JsonResponse({'msg': "Comment added"})
     else:
         return HttpResponseBadRequest()
 
